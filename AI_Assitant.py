@@ -6,18 +6,14 @@ import datetime
 import os
 import webbrowser
 
-# Initialize AI Engine
 openai.api_key = "Your _API_KEY"
 
-# Initialize Speech Engine
 engine = pyttsx3.init()
 
-# Function: Speak AI Responses
 def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-# Function: Recognize Speech Commands
 def recognize_speech():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -36,7 +32,6 @@ def recognize_speech():
             speak("Speech service error.")
     return ""
 
-# Function: Get AI Response (Using GPT-4)
 def get_ai_response(prompt):
     try:
         response = openai.ChatCompletion.create(
@@ -47,7 +42,7 @@ def get_ai_response(prompt):
     except Exception as e:
         return f"Error: {str(e)}"
 
-# Function: Perform Actions Based on Commands
+
 def perform_task(command):
     if "hello" in command:
         response = f"Hallo"
@@ -81,13 +76,11 @@ def perform_task(command):
         speak(response)
 
     else:
-        # Get AI-generated response if no direct command matches
         response = get_ai_response(command)
         speak(response)
 
     return response
 
-# Main Loop
 if __name__ == "__main__":
     speak("Hello! I am your AI assistant. How can I help you today?")
     while True:
