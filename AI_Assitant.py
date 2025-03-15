@@ -52,10 +52,6 @@ def perform_task(command):
     if "hello" in command:
         response = f"Hallo"
         speak(response)
-    
-    elif "how are you?" in command:
-        response = f"I m Fine"
-        speak(response)
 
     elif "time" in command:
         current_time = datetime.datetime.now().strftime("%I:%M %p")
