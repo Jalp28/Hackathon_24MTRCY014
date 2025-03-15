@@ -7,7 +7,7 @@ import os
 import webbrowser
 
 # Initialize AI Engine
-openai.api_key = "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"
+openai.api_key = "Your _API_KEY"
 
 # Initialize Speech Engine
 engine = pyttsx3.init()
